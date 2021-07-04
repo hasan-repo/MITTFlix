@@ -1,8 +1,10 @@
 import React from 'react';
-const {movieItem} = props;
+
 
 
 function MovieItem(props){
+
+    const {movieItem} = props
 
     return(
         <div className = "movie">
