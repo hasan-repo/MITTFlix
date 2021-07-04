@@ -1,18 +1,25 @@
 import React from 'react';
 
 import Header from "./components/Header"
-import GenreItem from "./components/GenreItem"
+// import GenreItem from "./components/GenreItem"
+import Home from "./views/Home"
+import MyList from './views/MyList';
+import MovieDetail from "./views/"
 
 import * as MovieAPI from './MovieAPI';
 
 
 
 class App extends React.Component {
-  render = () => {
+  
     return (
       <>
         <Header />
-        <GenreItem />
+        <Switch>
+				<Route exact path="/" component={ Home } />
+				<Route path='/detail/:id' component={ MovieDetail } />
+				<Route path='/my-list' component={ MyList } />
+			</Switch>
         
       </>
       //   <header class="header">
@@ -307,7 +314,7 @@ class App extends React.Component {
 
       // </>
     );
-  }
+  
 }
 
 export default App;
