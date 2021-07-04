@@ -22,6 +22,9 @@ export const removeFromList = movie =>
       body: JSON.stringify({my_list: false})
     }).then(res => res.json());
 
-export const genres = () =>
-  fetch(`${api}/genres`)
-    .then(response => response.json())
+export const genres = async () => {
+  const res = await fetch(`${api}/genres?_sort=name&_order=asc`)
+  const result = await res.json()
+  return  result
+}
+  
