@@ -1,7 +1,7 @@
 import React from 'react'
 import MovieItem from "./MovieItem"
 
-function Gentlemen(props) {
+function GenreItem(props) {
 
     return(
         <div className="titleList">
@@ -15,4 +15,4 @@ function Gentlemen(props) {
     )
 }
 
-export default Gentlemen
+export default GenreItem
