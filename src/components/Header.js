@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 function Header(props) {
 
@@ -24,11 +25,11 @@ function Header(props) {
             <input type="search" placeholder="Search for a title..." />
             <div className="searchResults"></div>
         </form>
-        
+
     </header>
 
     )
 }
 
 
-export default Header
+export default withRouter(Header)
