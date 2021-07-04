@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from "./components/Header"
+import GenreItem from "./components/GenreItem"
 
 import * as MovieAPI from './MovieAPI';
 
@@ -9,9 +10,11 @@ import * as MovieAPI from './MovieAPI';
 class App extends React.Component {
   render = () => {
     return (
-       <>
-       <Header/>
-       </>
+      <>
+        <Header />
+        <GenreItem />
+        
+      </>
       //   <header class="header">
       //     <a href="/">
       //       <img
