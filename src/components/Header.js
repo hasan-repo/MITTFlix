@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-function Header(props){
+function Header(props) {
 
     return (
-        <header classname = "header">
-          <a href="/"> 
-                <img 
+        <header className ="header">
+            <a href="/">
+                <img
                 src="https://fontmeme.com/permalink/190707/fd4735271a0d997cbe19a04408c896fc.png"
                 alt="netflix-font"
                 border="0"
@@ -23,12 +23,12 @@ function Header(props){
             <form id="search" className="search">
                 <input type="search" placeholder="Search for a title..." />
                 <div className="searchResults"></div>
-            </form>
-
-
+            </form>  
+            
         </header>
 
     )
 }
+
 
 export default Header
