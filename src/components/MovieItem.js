@@ -23,7 +23,7 @@ function MovieItem(props) {
             />
             <div className="overlay">
                 <div className="title">{ movieItem.title }</div>
-                <div className="rating">7.1/10</div>
+                <div className="rating">{movieItem.vote_average}/10</div>
                 <div className="plot">
                     { movieItem.overview }
                 </div>
