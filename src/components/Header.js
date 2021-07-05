@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom'
 function Header(props) {
 
     const [searchKey, setSearchKey] = useState("")
-    
+    const { headerParams } = props
+    const [ showparams, setShowParams ] = useState(false)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -38,7 +39,7 @@ function Header(props) {
             </nav>
         </div>
 
-        <form id="search" className="search">
+        <form id="search" className="search" onSubmit={handleSubmit}>
             <input type="search" placeholder="Search for a title..." />
             <div className="searchResults"></div>
         </form>
