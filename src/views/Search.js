@@ -8,7 +8,7 @@ function Search (props) {
 
     async function getSearchResult() {
         let result = []
-        if (page === '') {
+        if (page === 'home') {
             result = await MovieAPI.getSearchResult(`movies?q=${ key }`)
         }
         else {

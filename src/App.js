@@ -5,7 +5,7 @@ import Header from "./components/Header"
 
 import Home from "./views/Home"
 import MyList from './views/MyList';
-import MovieDetail from "./views/MovieDetail"
+import Search from "./views/Search"
 
 import * as MovieAPI from './MovieAPI'
 
