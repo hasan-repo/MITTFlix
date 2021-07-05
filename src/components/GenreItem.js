@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import MovieItem from "./MovieItem"
 
+import { AppContext } from "../App"
+
 function GenreItem(props) {
+   
     const { genreItem } = props
+    const { handleToggle } = useContext(AppContext)
 
     //if movir count 0 retun empty tag
     if (genreItem.movies.length === 0) { 
@@ -16,7 +20,7 @@ function GenreItem(props) {
                 <div className="titles-wrapper">
                     {
                          genreItem.movies.map((movie, index) => (
-                            <MovieItem movieItem={ movie } key={ index } /> 
+                            <MovieItem movieItem={ movie } key={ index } handleToggle={ handleToggle } /> 
                         ))
                     }
                 </div> 
