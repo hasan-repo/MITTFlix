@@ -25,7 +25,7 @@ function MyList () {
             setMyListData(myList)
         }
         fetchMyListMovies()
-    }) [handleToggle])
+    }, [handleToggle]) 
     
     return (
         <div className="titleList">

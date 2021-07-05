@@ -1,16 +1,12 @@
-import React, { useState, useContext } from 'react'
-
-import { AppContext } from "../App"
-
-import * as MovieAPI from '../MovieAPI'
+import React from 'react'
 
 function MovieItem(props) {
 
-    const { movieItem } = props
+    const { movieItem, handleToggle} = props
 
     
 
-    const { handleToggle } = useContext(AppContext)
+    // const { handleToggle } = useContext(AppContext)
     const handleToggleBtn = () => {
         
         handleToggle(movieItem)
