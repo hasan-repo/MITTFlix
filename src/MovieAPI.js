@@ -33,4 +33,10 @@ export const getMyList = async () =>{
   const result = await res.json()
   return result
 }
+
+export const getSearchResult = async (query) => {
+  const res = await fetch(`${ api }/${ query }`)
+  const result = await res.json()
+  return result
+}
   
