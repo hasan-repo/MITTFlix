@@ -27,4 +27,10 @@ export const genres = async () => {
   const result = await res.json()
   return  result
 }
+
+export const getMyList = async () =>{ 
+  const res = await fetch(`${api}/movies?my_list=true`)
+  const result = await res.json()
+  return result
+}
   
