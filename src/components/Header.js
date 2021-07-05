@@ -15,9 +15,9 @@ function Header(props) {
 
         <div id="navigation" className="navigation">
             <nav>
-            <ul>
-                <li><a onClick={ (e) => { e.preventDefault(); props.history.push('/my-list')}}>My List</a></li>
-            </ul>
+                <ul>
+                    <li><a onClick={ (e) => { e.preventDefault(); props.history.push('/my-list')}}>My List</a></li>
+                </ul>
             </nav>
         </div>
 
