@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function Header(props) {
+
+    const [searchKey, setSearchKey] = useState("")
+    
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        if (window.location.href.includes('my-list')) {
+            props.history.push(`/search/my-list/${ searchKey }`)
+        }
+        else {
+            props.history.push(`/search/home/${ searchKey }`)
+        }        
+    }
+
+
+
 
     return (
         <header className = "header">
