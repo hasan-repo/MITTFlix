@@ -17,6 +17,7 @@ export const AppContext = createContext()
 function App () {
   //add and remove to my list
   const [ moviesData, setMoviesData ] = useState([])
+  const [ headerParams, setHeaderParams ] = useState({})
 	
 
 	const handleToggle = async (itemData) => {
@@ -34,6 +35,7 @@ function App () {
             const movies = await MovieAPI.getAll()
             return movies
         }
+        
         async function fetchGenres() {
             const all_movies = await fetchAllMovies()
             let genre = await MovieAPI.genres()
@@ -48,11 +50,11 @@ function App () {
     }, [handleToggle])
     return (
       <>
-      <AppContext.Provider value = {{ moviesData, handleToggle }}>
-          <Header />
+      <AppContext.Provider value = {{ moviesData, handleToggle, setHeaderParams}}>
+          <Header headerParams={ headerParams }/>
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route path='/detail/:id' component={ MovieDetail } />
+            <Route path='/search/:page/:key' component={ Search } />
             <Route path='/my-list' component={ MyList } />
         </Switch>
       </AppContext.Provider>

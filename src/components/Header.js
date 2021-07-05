@@ -18,7 +18,18 @@ function Header(props) {
         }        
     }
 
+    const handleChange = (e) => {
+        e.preventDefault()
+        setSearchKey(e.target.value)
+    }
 
+    useEffect(() => {
+        if (window.location.href.includes('/search')) {
+            setShowParams(true)
+        } else {
+            setShowParams(false)
+        }
+    })
 
 
     return (
@@ -40,8 +51,15 @@ function Header(props) {
         </div>
 
         <form id="search" className="search" onSubmit={handleSubmit}>
-            <input type="search" placeholder="Search for a title..." />
-            <div className="searchResults"></div>
+            <input 
+                type="search" 
+                placeholder="Search for a title..." 
+                value={ searchKey } 
+                onChange={(e) => handleChange(e)}
+            />
+            <div className="searchResults">
+                {showparams ? <>{ headerParams.key } : { headerParams.count }</> : <></> }
+            </div>
         </form>
 
     </header>

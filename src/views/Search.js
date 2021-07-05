@@ -9,8 +9,8 @@ function Search (props) {
 //   count search result.
     const { page, key } = useParams()
 
-    const {  } = useContext(AppContext)
-    const [  setSearchResult ] = useState([])
+    const { setHeaderParams } = useContext(AppContext)
+    const [ searchResult, setSearchResult ] = useState([])
 
     async function getSearchResult() {
         let result = []
@@ -21,6 +21,7 @@ function Search (props) {
             result = await MovieAPI.getSearchResult(`movies?my_list=true&q=${ key }`)
             
         }
+        setHeaderParams({ key: key, count: result.length })
         setSearchResult(result)
     }
 
@@ -33,6 +34,25 @@ function Search (props) {
         }
         getSearchResult()
     }
+
+    useEffect(() => {
+        getSearchResult()
+    }, [key])
+
+    return (
+        <div className="titleList">
+                <div className="title">
+                <h1>Result</h1>
+                    <div className="titles-wrapper">
+                        {
+                            searchResult.map((movie, index) => (
+                                <MovieItem movieItem={ movie } key={ index } handleToggle= { handleToggle }/> 
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+    )
 
     
 
